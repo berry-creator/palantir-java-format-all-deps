@@ -43,6 +43,7 @@ import com.palantir.javaformat.java.JavaCommentsHelper;
 import com.palantir.javaformat.java.JavaFormatterOptions;
 import com.palantir.javaformat.java.RemoveUnusedImports;
 import com.palantir.javaformat.java.Replacement;
+import com.palantir.javaformat.java.JavaInputAstVisitor;
 import com.sun.tools.javac.file.JavacFileManager;
 import com.sun.tools.javac.parser.JavacParser;
 import com.sun.tools.javac.parser.ParserFactory;
