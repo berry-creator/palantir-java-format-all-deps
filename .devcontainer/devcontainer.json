@@ -1,0 +1,73 @@
+{
+    "name": "Palantir-Java-Format-Shadow Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "containerUser": "dev",
+    "workspaceFolder": "/home/dev/workspace",
+    "mounts": [
+        "source=./,target=/home/dev/workspace,type=bind,consistency=cached"
+    ],
+    "overrideCommand": true,
+    "shutdownAction": "stopContainer",
+    "remoteEnv": {
+        "LC_ALL": "en_US.UTF-8",
+        "SHELL": "/bin/zsh"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // Git
+                "mhutchie.git-graph",
+                // Java development
+                "redhat.java",
+                "vscjava.vscode-java-debug",
+                "vscjava.vscode-java-test",
+                "vscjava.vscode-maven",
+                "vscjava.vscode-java-dependency",
+                "dhruv.maven-dependency-explorer"
+            ],
+            "settings": {
+                // Terminal
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.scrollback": 100000,
+                // Git
+                "git.autofetch": true,
+                "git.blame.editorDecoration.enabled": true,
+                // Git Graph
+                "git-graph.dialog.merge.noFastForward": false,
+                // Java
+                "java.jdt.ls.vmargs": "-noverify -Xms256m -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication",
+                "java.compile.nullAnalysis.mode": "disabled",
+                "java.symbols.includeSourceMethodDeclarations": true,
+                "java.configuration.updateBuildConfiguration": "interactive",
+                "java.semanticHighlighting.enabled": true,
+                "java.import.gradle.enabled": false,
+                "java.import.maven.enabled": true,
+                "java.maven.downloadSources": false,
+                "java.dependency.packagePresentation": "hierarchical",
+                "maven.view": "hierarchical",
+                // Disable default java formatting
+                "java.format.enabled": false,
+                "java.format.comments.enabled": false,
+                // disable organize imports on save
+                "java.saveActions.organizeImports": false,
+                "files.trimTrailingWhitespace": false,
+                // Editor
+                "workbench.editor.enablePreview": false,
+                "editor.smoothScrolling": true,
+                "editor.cursorBlinking": "expand",
+                "editor.cursorSmoothCaretAnimation": "on",
+                "workbench.list.smoothScrolling": true,
+                "editor.formatOnSave": true,
+                // Editor - Tab
+                "editor.detectIndentation": false,
+                "editor.tabSize": 4,
+                // Editor - BracketPairs
+                "editor.guides.bracketPairs": true,
+                "editor.bracketPairColorization.enabled": true
+            }
+        }
+    }
+}
